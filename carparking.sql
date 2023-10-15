@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 02, 2023 at 05:03 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: localhost:3306
+-- Generation Time: Oct 15, 2023 at 06:47 PM
+-- Server version: 10.5.20-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `carparking`
+-- Database: `id21366942_carparking`
 --
 
 -- --------------------------------------------------------
@@ -41,10 +41,9 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `username`, `password`, `email`, `phone`, `carno`) VALUES
-(102014, 'sneha', 'sneha', 'snehbansal24@gmail.com', '8527419630', 'PB08GH3100'),
 (123414, 'akshita', 'akshita', 'akshitabansal24@gmai', '7340892226', 'PB08BD7338'),
-(145202, 'nishant', 'hello', 'nbansal24@gmail.com', '7696285660', 'PB08EG3124'),
-(161634, 'doli', 'dolidoli', 'doli@gmail.com', '8888541021', 'PB07HU4150');
+(161634, 'doli', 'dolidoli', 'doli@gmail.com', '8888541021', 'PB07HU4150'),
+(204016, 'rohan', 'hello', 'roro@gmail.com', '2154873690', 'CH01GB1234');
 
 -- --------------------------------------------------------
 
@@ -61,7 +60,7 @@ CREATE TABLE `otp` (
 --
 
 INSERT INTO `otp` (`otp`) VALUES
-(0);
+(73733);
 
 -- --------------------------------------------------------
 
@@ -86,11 +85,11 @@ INSERT INTO `spaces` (`space_id`, `is_available`, `floor`, `tag`, `longitude`, `
 (1, 0, 1, 'A3', '75.536730', '31.394673'),
 (2, 0, 1, 'B3', '75.538730', '31.395673'),
 (3, 1, 2, 'A3', '75.546730', '31.394673'),
-(4, 1, 3, 'C5', '75.536720', '31.393673'),
-(5, 1, -1, 'D4', '75.536430', '31.397673'),
-(6, 1, 0, 'B4', '75.536430', '31.397673'),
-(7, 1, 0, 'F4', '75.536430', '31.397673'),
-(8, 1, 1, 'C6', '75.536430', '31.397673'),
+(4, 0, 3, 'C5', '75.536720', '31.393673'),
+(5, 0, -1, 'D4', '75.536430', '31.397673'),
+(6, 0, 0, 'B4', '75.536430', '31.397673'),
+(7, 1, 0, 'F4', '75.533526', '31.395737'),
+(8, 1, 1, 'C6', '75.532872', '31.398320'),
 (9, 1, 1, 'A1', '75.536430', '31.397673'),
 (10, 1, 2, 'D6', '75.536430', '31.397673');
 
@@ -115,7 +114,12 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`transaction_id`, `customer_id`, `space_id`, `carno`, `entry_time`, `exit_time`, `total_fare`) VALUES
-(1240, 123414, 2, 'PB08BD7338', '2023-10-02 20:32:16', '2023-10-02 20:32:31', 100);
+(1240, 123414, 2, 'PB08BD7338', '2023-10-02 20:32:16', '2023-10-02 20:32:31', 100),
+(1241, 123414, 3, 'PB08BD7338', '2023-10-07 22:57:00', '2023-10-07 23:05:20', 100),
+(1253, 123414, 3, 'PB08BD7338', '2023-10-15 01:01:41', '2023-10-15 01:04:56', 30),
+(1254, 123414, 3, 'PB08BD7338', '2023-10-15 23:54:22', '2023-10-15 23:55:01', 0),
+(1255, 123414, 3, 'PB08BD7338', '2023-10-16 00:02:42', '2023-10-16 00:03:01', 5),
+(1256, 204016, 3, 'CH01GB1234', '2023-10-16 00:05:26', '2023-10-16 00:05:42', 5);
 
 --
 -- Indexes for dumped tables
@@ -149,7 +153,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1241;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1257;
 
 --
 -- Constraints for dumped tables
